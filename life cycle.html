@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly World | Beauty of Nature</title>
+    <meta name="description" content="Discover the beautiful world of butterflies, their colors, life cycle, and importance to nature.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff9fd;
+            color: #332542;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #6d3c91;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            font-size: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd7f3;
+        }
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            color: white;
+            background:
+                linear-gradient(rgba(40, 15, 65, 0.55),
+                                rgba(40, 15, 65, 0.55)),
+                url("https://thumbs.dreamstime.com/b/four-monarch-butterflies-flying-over-field-white-wildflowers-golden-light-sunset-343604954.jpg")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #f6b8e2;
+            color: #42245c;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 75px 8%;
+            scroll-margin-top: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #6d3c91;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #766a7d;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .butterfly-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .butterfly-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 22px #56336a15;
+            transition: transform 0.3s;
+        }
+
+        .butterfly-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .butterfly-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            color: #6d3c91;
+            margin-bottom: 10px;
+        }
+
+        .life-cycle {
+            background: #f3eafa;
+        }
+
+        .life-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 22px;
+            text-align: center;
+        }
+
+        .life-card {
+            padding: 25px 18px;
+            background: white;
+            border-radius: 18px;
+        }
+
+        .life-card .emoji {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .life-card h3 {
+            color: #6d3c91;
+            margin-bottom: 8px;
+        }
+
+        .facts {
+            background: #fff;
+        }
+
+        .fact-list {
+            max-width: 800px;
+            margin: auto;
+            list-style: none;
+        }
+
+        .fact-list li {
+            background: #fff2fa;
+            margin: 14px 0;
+            padding: 18px 22px;
+            border-radius: 12px;
+        }
+
+        .fact-list li::before {
+            content: " ";
+        }
+
+        .protect {
+            text-align: center;
+            background: linear-gradient(135deg, #6d3c91, #a75fa7);
+            color: white;
+        }
+
+        .protect h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .protect p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .protect .button {
+            background: white;
+        }
+
+        footer {
+            background: #291735;
+            color: #eee0f5;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer a {
+            color: #f6b8e2;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .hero {
+                min-height: 480px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .section-title h2,
+            .protect h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2> Butterfly World</h2>
+        <nav>
+             <a href ="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#species">Species</a>
+            <a href="#lifecycle">Life Cycle</a>
+            <a href="#protect">Protect</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Discover the Magic of Butterflies</h1>
+                <p>
+                    A world of colorful wings, beautiful transformations,
+                    and the wonders of nature.
+                </p>
+                <a class="button" href="#about">Explore Their World</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-title">
+                <h2>About Butterflies</h2>
+                <p>Small creatures with extraordinary beauty.</p>
+            </div>
+
+            <div class="intro">
+                <p>
+                    Butterflies are fascinating insects known for their
+                    colorful wings and graceful flight. They belong to the
+                    order Lepidoptera and play an important role in nature
+                    by helping pollinate flowers. Their amazing life cycle
+                    reminds us that change can lead to something beautiful.
+                </p>
+            </div>
+        </section>
+
+        <section id="species">
+            <div class="section-title">
+                <h2>Beautiful Butterfly Species</h2>
+                <p>Meet some of the world's most remarkable butterflies.</p>
+            </div>
+
+            <div class="butterfly-grid">
+                <article class="butterfly-card">
+                    <img
+                        src="https://cdn.mos.cms.futurecdn.net/DMC9ZMVX5R5gxXnSBYtWuL.jpg"
+                        alt="Colorful butterfly resting among flowers"
+                        loading="lazy">
+                    <div class="card-content">
+                        <h3>Monarch Butterfly</h3>
+                        <p>
+                            Famous for its orange-and-black wings, the monarch
+                            is known for its remarkable long-distance migration.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="butterfly-card">
+                    <img
+                        src="https://haydensanimalfacts.files.wordpress.com/2015/12/blue-morpho-butterfly.jpg"
+                        alt="Butterfly displaying colorful wings"
+                        loading="lazy">
+                    <div class="card-content">
+                        <h3>Blue Morpho</h3>
+                        <p>
+                            This tropical butterfly is celebrated for its
+                            brilliant, shimmering blue wings.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="butterfly-card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.SxPujLR26epStzJx0Hi3_wHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Flowers in a colorful natural garden"
+                        loading="lazy">
+                    <div class="card-content">
+                        <h3>Swallowtail</h3>
+                        <p>
+                            Many swallowtails have striking patterns and
+                            distinctive tail-like extensions on their hindwings.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="life-cycle" id="lifecycle">
+            <div class="section-title">
+                <h2>The Butterfly Life Cycle</h2>
+                <p>Four amazing stages of transformation.</p>
+            </div>
+
+            <div class="life-grid">
+                <article class="life-card">
+                    
+                    <h3>1. Egg</h3>
+                    <p>A butterfly lays tiny eggs on a suitable host plant.</p>
+                </article>
+
+                <article class="life-card">
+                    
+                    <h3>2. Caterpillar</h3>
+                    <p>The larva eats and grows, shedding its skin as needed.</p>
+                </article>
+
+                <article class="life-card">
+                    
+                    <h3>3. Chrysalis</h3>
+                    <p>Inside the chrysalis, the insect transforms its body.</p>
+                </article>
+
+                <article class="life-card">
+                   
+                    <h3>4. Adult</h3>
+                    <p>The adult butterfly emerges, expands its wings, and flies.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="facts" id="facts">
+            <div class="section-title">
+                <h2>Did You Know?</h2>
+                <p>Fun facts about these incredible insects.</p>
+            </div>
+
+            <ul class="fact-list">
+                <li>Butterflies taste using sensors on their feet.</li>
+                <li>Butterfly wings are covered in tiny scales.</li>
+                <li>Butterflies use their long proboscis to drink nectar.</li>
+                <li>Many butterflies help pollinate flowering plants.</li>
+                <li>Butterflies are cold-blooded and depend on external warmth.</li>
+            </ul>
+        </section>
+
+        <section class="protect" id="protect">
+            <h2>Protect Our Butterflies</h2>
+            <p>
+                Butterflies need healthy habitats to survive. Plant native
+                flowers, avoid unnecessary pesticides, protect natural spaces,
+                and provide suitable host plants for caterpillars.
+                Every small action can help nature thrive.
+            </p>
+            <a class="button" href="#home">Back to Top ↑</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>🦋 Butterfly World | A Celebration of Nature</p>
+        <p>Made with love for butterflies and our planet.</p>
+        <p>&copy; 2026 Butterfly World</p>
+    </footer>
+
+</body>
+</html>
